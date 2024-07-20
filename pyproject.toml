@@ -3,6 +3,7 @@ name = "xtalk"
 version = "0.0.1"
 dependencies = [
     "Django",
+    "django_htmx",
 ]
 
 [project.optional-dependencies]
