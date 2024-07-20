@@ -68,3 +68,13 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+BROWSER_RELOAD = envconfig.get_bool("BROWSER_RELOAD")
+
+if BROWSER_RELOAD:
+    INSTALLED_APPS += [
+        "django_browser_reload",
+    ]
+    MIDDLEWARE += [
+        "django_browser_reload.middleware.BrowserReloadMiddleware",
+    ]
