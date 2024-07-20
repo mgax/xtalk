@@ -1,0 +1,12 @@
+[project]
+name = "xtalk"
+version = "0.0.1"
+dependencies = [
+    "Django",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyright",
+    "ruff-lsp",
+]
