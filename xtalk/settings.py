@@ -67,6 +67,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATICFILES_DIRS = [
+    BASE_DIR / "xtalk" / "static",
+]
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 BROWSER_RELOAD = envconfig.get_bool("BROWSER_RELOAD")
