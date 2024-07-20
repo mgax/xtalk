@@ -2,8 +2,11 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
+from . import views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("room/<uuid:room>/", views.room, name="room"),
 ]
 
 if settings.BROWSER_RELOAD:
