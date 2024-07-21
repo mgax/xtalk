@@ -13,6 +13,8 @@
         class="dark:bg-slate-800"
         hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
     >
+        {% include "nav.html" %}
+
         {% block content %}
         {% endblock %}
     </body>

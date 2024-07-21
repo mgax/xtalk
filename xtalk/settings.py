@@ -12,6 +12,7 @@ DEBUG = envconfig.get_bool("DEBUG")
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    "xtalk.login",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -76,6 +77,22 @@ STATICFILES_DIRS = [
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "login.User"
+
+LOGIN_URL = "login:form"
+
+LOGIN_REDIRECT_URL = "home"
+
+LOGOUT_REDIRECT_URL = "home"
+
+LOGIN_TOKEN_MAX_AGE = 300
+
+DEFAULT_FROM_EMAIL = envconfig.get_str("DEFAULT_FROM_EMAIL", "noreply@example.com")
+
+EMAIL_BACKEND = envconfig.get_str(
+    "EMAIL_BACKEND", "django.core.mail.backends.dummy.EmailBackend"
+)
 
 BROWSER_RELOAD = envconfig.get_bool("BROWSER_RELOAD")
 

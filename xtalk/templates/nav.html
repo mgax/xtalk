@@ -1,0 +1,11 @@
+<nav class="text-right dark:text-slate-400">
+    {% if request.user.is_authenticated %}
+        {{ request.user.email }}
+        <form method="post" action="{% url "login:logout" %}" class="inline-block">
+            {% csrf_token %}
+            <button type="submit">logout</button>
+        </form>
+    {% else %}
+        <a href="{% url "login:form" %}">login</a>
+    {% endif %}
+</nav>

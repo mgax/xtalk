@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="POST" class="prose dark:prose-invert">
+        {% csrf_token %}
+        <label>
+            Email:
+            {{ form.email }}
+        </label>
+
+        <button type="submit">Send login code</button>
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+{% endblock %}
